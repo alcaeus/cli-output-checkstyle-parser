@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle>
+    <file name="src/Sample/FirstFile.php">
+        <error line="91" column="1" message="Strict comparison using === between false and true will always evaluate to false." severity="error" source="phpstan" />
+    </file>
+    <file name="src/Sample/SecondFile.php">
+        <error line="38" column="1" message="Access to an undefined property LibXMLError::$level." severity="error" source="phpstan" />
+        <error line="41" column="1" message="Access to an undefined property LibXMLError::$code." severity="error" source="phpstan" />
+        <error line="41" column="1" message="Access to an undefined property LibXMLError::$message." severity="error" source="phpstan" />
+        <error line="47" column="1" message="Access to an undefined property LibXMLError::$message." severity="error" source="phpstan" />
+        <error line="47" column="1" message="Access to an undefined property LibXMLError::$code." severity="error" source="phpstan" />
+    </file>
+</checkstyle>

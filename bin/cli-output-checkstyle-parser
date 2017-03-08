@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php declare(strict_types = 1);
+
+use Alcaeus\CliOutputCheckstyleParser\Command\ParseCommand;
+use Symfony\Component\Console\Application;
+
+$autoloaderPaths = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../vendor/autoload.php',
+];
+
+foreach ($autoloaderPaths as $autoloader) {
+    if (file_exists($autoloader)) {
+        define('COMPOSER_AUTOLOADER', $autoloader);
+        break;
+    }
+}
+
+if (!defined('COMPOSER_AUTOLOADER')) {
+    fwrite(STDERR, 'Composer autoloader has not been found.');
+    die(1);
+}
+
+require_once(COMPOSER_AUTOLOADER);
+
+$application = new Application('CLI Output Checkstyle Parser');
+$application->add(new ParseCommand());
+$application->run();

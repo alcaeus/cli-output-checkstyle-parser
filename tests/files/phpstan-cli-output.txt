@@ -1,0 +1,18 @@
+ ------ -----------------------------------------------------------------------------------
+  Line   src/Sample/FirstFile.php
+ ------ -----------------------------------------------------------------------------------
+  91     Strict comparison using === between false and true will always evaluate to false.
+ ------ -----------------------------------------------------------------------------------
+
+ ------ ----------------------------------------------------------------------------------------------------
+  Line   src/Sample/SecondFile.php
+ ------ ----------------------------------------------------------------------------------------------------
+  38     Access to an undefined property LibXMLError::$level.
+  41     Access to an undefined property LibXMLError::$code.
+  41     Access to an undefined property LibXMLError::$message.
+  47     Access to an undefined property LibXMLError::$message.
+  47     Access to an undefined property LibXMLError::$code.
+ ------ ----------------------------------------------------------------------------------------------------
+
+ [ERROR] Found 6 errors
+
