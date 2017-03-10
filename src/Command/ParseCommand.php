@@ -17,7 +17,7 @@ final class ParseCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('cli-output-checkstyle-parser:parse')
+            ->setName('parse')
             ->addArgument('input-format', InputArgument::REQUIRED)
             ->addArgument('output-file', InputArgument::REQUIRED)
             ->addArgument('input-file', InputArgument::REQUIRED)
