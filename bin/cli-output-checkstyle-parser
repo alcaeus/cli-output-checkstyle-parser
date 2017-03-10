@@ -5,8 +5,9 @@ use Alcaeus\CliOutputCheckstyleParser\Command\ParseCommand;
 use Symfony\Component\Console\Application;
 
 $autoloaderPaths = [
+    __DIR__ . '/../autoload.php',
     __DIR__ . '/../vendor/autoload.php',
-    __DIR__ . '/../../../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
 ];
 
 foreach ($autoloaderPaths as $autoloader) {

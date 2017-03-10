@@ -21,6 +21,7 @@ final class ParseCommand extends Command
             ->addArgument('input-format', InputArgument::REQUIRED)
             ->addArgument('output-file', InputArgument::REQUIRED)
             ->addArgument('input-file', InputArgument::REQUIRED)
+            ->setDescription('Parses a given input file and converts it to chekstyle XML.')
         ;
     }
 
