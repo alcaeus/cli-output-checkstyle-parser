@@ -4,6 +4,7 @@ namespace Alcaeus\CliOutputCheckstyleParser\Command;
 
 use Alcaeus\CliOutputCheckstyleParser\Parser\ParserInterface;
 use Alcaeus\CliOutputCheckstyleParser\Parser\PhpStan;
+use Alcaeus\CliOutputCheckstyleParser\Parser\Yamllint;
 use Alcaeus\CliOutputCheckstyleParser\Writer\CheckstyleWriter;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -53,6 +54,8 @@ final class ParseCommand extends Command
         switch ($format) {
             case 'phpstan':
                 return new PhpStan();
+            case 'yamllint':
+                return new Yamllint();
         }
 
         return null;
