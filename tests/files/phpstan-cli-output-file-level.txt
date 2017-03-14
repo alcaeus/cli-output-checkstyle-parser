@@ -1,0 +1,9 @@
+ ------ -------------------------------------------------------------------------
+  Line   tests/AppBundle/Document/User/LegalInformation/PaymentTest.php
+ ------ -------------------------------------------------------------------------
+         Class Tests\AppBundle\Document\User\PaymentTest was not found while
+         trying to analyse it - autoloading is not probably configured properly.
+ ------ -------------------------------------------------------------------------
+
+ [ERROR] Found 1 error
+

@@ -34,21 +34,28 @@ REGEXP;
             $fileList->add(new File($match['filename'], $this->parseFileErrors($match['errors'])));
         });
 
+
         return $fileList;
     }
 
     private function parseFileErrors($fileErrors): array
     {
-        $regexp = <<<REGEXP
-#
-    ^\s*(?P<line>\d+)\s+(?P<message>.*?)\s*$
-#xm
-REGEXP;
+        $matches = preg_split('#^\s*(?P<line>\d+)\s+#m', $fileErrors, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
 
-        preg_match_all($regexp, $fileErrors, $matches, PREG_SET_ORDER);
+        $violations = [];
+        while ($match = array_shift($matches)) {
+            if (preg_match('#^\d+#', $match)) {
+                $line = (int) $match;
+                $message = array_shift($matches);
+            } else {
+                $line = 1;
+                $message = $match;
+            }
 
-        return array_map(function ($error) {
-            return new Violation((int) $error['line'], 1, $error['message'], ViolationInterface::SEVERITY_ERROR, 'phpstan');
-        }, $matches);
+            $message = preg_replace('#\s+#', ' ', trim($message));
+            $violations[] = new Violation($line, 1, $message, ViolationInterface::SEVERITY_ERROR, 'phpstan');
+        }
+
+        return $violations;
     }
 }
