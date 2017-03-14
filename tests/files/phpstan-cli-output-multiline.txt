@@ -1,0 +1,10 @@
+ ------ -------------------------------------------------------------------
+  Line   src/AppBundle/Document/User.php
+ ------ -------------------------------------------------------------------
+  1581   Return typehint of method
+         AppBundle\Document\User::getEmailAliasMappings() has invalid type
+         AppBundle\Document\EmailAliasMapping.
+ ------ -------------------------------------------------------------------
+
+ [ERROR] Found 1 error
+
