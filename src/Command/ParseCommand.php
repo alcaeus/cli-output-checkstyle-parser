@@ -25,7 +25,7 @@ final class ParseCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $format = $input->getArgument('input-format');
         $inputFile = $input->getArgument('input-file');
